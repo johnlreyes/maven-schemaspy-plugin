@@ -167,6 +167,24 @@ public class SchemaSpyReport extends AbstractMavenReport {
 	 */
 	private String includeTableNamesRegex;
 
+        /**
+         * Exclude matching table/views. This is a regular expression that's
+         * used to determine which tables/views to include. For example: -I
+	 * "(.*book.*)|(library.*)" excludes those tables/views with 'book' in
+	 * their names or that start with 'library'. You might want to use
+	 * "description" with this option to describe the subset of tables.
+         * 
+         * @parameter excludeTableNamesRegex
+         */
+        private String excludeTableNamesRegex;
+
+	/**
+         * Specify graphviz installation directory.
+         * For example: -gv "C:/Program Files/Graphviz 2.28"
+         * 
+         * @parameter graphvizDir
+         */
+        private String graphvizDir;
 	/**
 	 * Exclude matching columns from relationship analysis to simplify the
 	 * generated graphs. This is a regular expression that's used to determine
@@ -447,6 +465,8 @@ public class SchemaSpyReport extends AbstractMavenReport {
 		addToArguments(argList, "-o", schemaSpyDirectory);
 		addToArguments(argList, "-desc", schemaDescription);
 		addToArguments(argList, "-i", includeTableNamesRegex);
+                addToArguments(argList, "-I", excludeTableNamesRegex);
+                addToArguments(argList, "-gv", graphvizDir);
 		addToArguments(argList, "-x", excludeColumnNamesRegex);
 		addFlagToArguments(argList, "-ahic", allowHtmlInComments);
 		addFlagToArguments(argList, "-noimplied", noImplied);
