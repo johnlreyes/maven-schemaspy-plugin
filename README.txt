@@ -26,3 +26,4 @@ and
 	</pluginRepositories>
 
 well that was the motivation in forking, i wanted to exclude liquibase generated table and specify absolute path of graphviz
+and use github as a maven repository for the forked artifacts
