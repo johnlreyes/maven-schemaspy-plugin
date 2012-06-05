@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <plugins>
+    <plugin>
+      <name>Maven SchemaSpy Plugin</name>
+      <prefix>schemaspy</prefix>
+      <artifactId>maven-schemaspy-plugin</artifactId>
+    </plugin>
+  </plugins>
+</metadata>
